@@ -1,0 +1,119 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Manrope:wght@400;500;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-background font-sans text-text antialiased;
+  background-image:
+    radial-gradient(circle at top left, rgba(166, 206, 57, 0.2), transparent 35%),
+    radial-gradient(circle at 100% 20%, rgba(11, 107, 58, 0.12), transparent 32%),
+    linear-gradient(180deg, #f8faf8 0%, #f1f7f1 38%, #f8faf8 100%);
+}
+
+body::before {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background-image:
+    linear-gradient(rgba(11, 107, 58, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(11, 107, 58, 0.03) 1px, transparent 1px);
+  background-size: 120px 120px;
+  content: "";
+  mask-image: radial-gradient(circle at center, black, transparent 85%);
+}
+
+::selection {
+  background: rgba(166, 206, 57, 0.4);
+  color: #0b2a1b;
+}
+
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-display text-slate-900;
+  }
+
+  p {
+    @apply leading-7 text-muted;
+  }
+
+  input,
+  select,
+  textarea {
+    @apply text-base;
+  }
+}
+
+@layer components {
+  .container-shell {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-shell {
+    @apply container-shell py-16 sm:py-20 lg:py-24;
+  }
+
+  .section-panel {
+    @apply rounded-[32px] border border-white/70 bg-white/90 shadow-panel backdrop-blur-xl;
+  }
+
+  .glass-panel {
+    @apply rounded-[28px] border border-white/70 bg-white/75 shadow-soft backdrop-blur-xl;
+  }
+
+  .eyebrow {
+    @apply inline-flex items-center gap-2 rounded-full border border-primary/15 bg-primary/5 px-4 py-2 text-[11px] font-bold uppercase tracking-[0.28em] text-primary;
+  }
+
+  .primary-button {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white shadow-soft transition duration-300 hover:-translate-y-0.5 hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-primary/30;
+  }
+
+  .secondary-button {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-primary/15 bg-white px-6 py-3 text-sm font-semibold text-primary shadow-soft transition duration-300 hover:-translate-y-0.5 hover:border-primary/35 hover:bg-primary/5 focus:outline-none focus:ring-2 focus:ring-primary/30;
+  }
+
+  .nav-link {
+    @apply text-sm font-semibold text-slate-700 transition hover:text-primary;
+  }
+
+  .input-field {
+    @apply w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-text outline-none transition placeholder:text-slate-400 focus:border-primary/35 focus:ring-4 focus:ring-primary/10;
+  }
+
+  .field-label {
+    @apply mb-2 block text-sm font-semibold text-slate-800;
+  }
+
+  .section-title {
+    @apply text-4xl leading-tight sm:text-5xl;
+  }
+
+  .card-hover {
+    @apply transition duration-300 hover:-translate-y-1.5 hover:shadow-panel;
+  }
+
+  .muted-chip {
+    @apply rounded-full border border-primary/10 bg-primary/5 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-primary;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
