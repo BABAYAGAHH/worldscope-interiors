@@ -4,6 +4,7 @@
   CheckCircle2,
   House,
   LayoutGrid,
+  MapPin,
   Paintbrush2,
   Palette,
   Ruler,
@@ -35,6 +36,20 @@ const serviceIcons = [
   Building2,
 ];
 const benefitIcons = [Sparkles, LayoutGrid, Paintbrush2, Building2];
+const scopeNotes = [
+  {
+    title: "Interior Calm",
+    text: "Living rooms, bedrooms, offices, receptions, and functional zones designed to feel resolved and usable.",
+  },
+  {
+    title: "Exterior Presence",
+    text: "Selected exterior-facing enhancements such as entry styling, facade balance, and overall presentation direction.",
+  },
+  {
+    title: "Commercial Polish",
+    text: "Client-facing spaces shaped to communicate order, confidence, and premium finish standards.",
+  },
+];
 
 function InteriorDecoration() {
   const interiorGallery = galleryItems.filter(
@@ -52,8 +67,8 @@ function InteriorDecoration() {
         primaryAction={{ label: "Book Interior Consultation", to: "/quote" }}
         secondaryAction={{ label: "Request Quote", to: "/contact" }}
         highlights={[
-          "Personalized design direction for homes and business spaces",
-          "Premium styling choices matched to budget, purpose, and atmosphere",
+          "Personalized design direction for homes, workspaces, and client-facing commercial environments.",
+          "A broadened scope that can also support selected exterior-facing enhancements where presentation matters.",
         ]}
         image="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1400&q=80"
         imageAlt="Elegant interior decoration"
@@ -63,10 +78,35 @@ function InteriorDecoration() {
       />
 
       <section className="section-shell pt-0">
+        <div className="grid gap-6 lg:grid-cols-[1.08fr_0.92fr]">
+          <div className="section-panel p-8 lg:p-10">
+            <span className="eyebrow">Interior + Exterior Scope</span>
+            <h2 className="mt-6 text-5xl font-semibold leading-[0.95] text-slate-900">
+              The interior remains the centre of the work, but first impressions outside matter too.
+            </h2>
+            <p className="mt-6 text-base text-slate-600 sm:text-lg">
+              Our decoration work is still grounded in interior transformation, yet we also recognise that a refined property experience often starts before a guest or client steps fully inside. That is why the service can extend to selected exterior-facing details such as entry styling, facade balance, and presentation-led finishing guidance.
+            </p>
+          </div>
+
+          <div className="space-y-4">
+            {scopeNotes.map((item) => (
+              <div key={item.title} className="editorial-note">
+                <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-primary">
+                  {item.title}
+                </p>
+                <p className="mt-4 text-sm leading-7 text-slate-600">{item.text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section-shell pt-0">
         <SectionHeader
           eyebrow="Service List"
-          title="Interior styling services shaped around comfort, function, and visual impact."
-          description="We work across homes, offices, and commercial spaces to create rooms that look polished and feel intentional."
+          title="Interior and exterior styling services shaped around comfort, function, and visual impact."
+          description="We work across homes, offices, and commercial spaces to create environments that look polished and feel intentional."
         />
         <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
           {interiorServices.map((service, index) => (
@@ -89,14 +129,14 @@ function InteriorDecoration() {
         />
         <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-5">
           {interiorProcess.map((step, index) => (
-            <div key={step} className="section-panel p-6 text-center">
-              <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10 text-primary">
+            <div key={step} className="section-panel p-7 text-center">
+              <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-[22px] bg-primary/10 text-primary">
                 <CheckCircle2 className="h-5 w-5" />
               </div>
-              <p className="mt-5 text-xs font-semibold uppercase tracking-[0.24em] text-primary">
+              <p className="mt-5 text-[10px] font-semibold uppercase tracking-[0.28em] text-primary">
                 Step 0{index + 1}
               </p>
-              <h3 className="mt-3 text-2xl font-semibold text-slate-900">{step}</h3>
+              <h3 className="mt-3 text-[1.7rem] font-semibold leading-none text-slate-900">{step}</h3>
             </div>
           ))}
         </div>
@@ -127,14 +167,12 @@ function InteriorDecoration() {
             title="Preview some of the looks and atmospheres we can help create."
             description="These sample portfolio entries highlight residential and commercial styling direction."
           />
-          <a
-            href={siteConfig.whatsappLink}
-            target="_blank"
-            rel="noreferrer"
-            className="secondary-button shrink-0"
-          >
-            Chat on WhatsApp
-          </a>
+          <div className="editorial-note max-w-xs">
+            <div className="flex items-start gap-3">
+              <MapPin className="mt-1 h-5 w-5 flex-none text-primary" />
+              <p className="text-sm leading-7 text-slate-600">{siteConfig.addressPlaceholder}</p>
+            </div>
+          </div>
         </div>
         <div className="mt-10">
           <GalleryGrid items={interiorGallery} showFilters={false} limit={4} />

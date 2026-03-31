@@ -1,5 +1,5 @@
 ﻿import { AnimatePresence, motion } from "framer-motion";
-import { ArrowRight, X } from "lucide-react";
+import { ArrowRight, MapPin, X } from "lucide-react";
 import { Link, NavLink } from "react-router-dom";
 import { navLinks, siteConfig } from "../data/site";
 
@@ -20,22 +20,22 @@ function MobileMenu({ open, onClose }) {
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
             transition={{ type: "spring", stiffness: 240, damping: 28 }}
-            className="ml-auto flex h-full w-full max-w-sm flex-col bg-white px-6 pb-8 pt-6 shadow-2xl"
+            className="ml-auto flex h-full w-full max-w-sm flex-col bg-[rgba(255,250,245,0.98)] px-6 pb-8 pt-6 shadow-2xl"
             onClick={(event) => event.stopPropagation()}
           >
-            <div className="flex items-center justify-between">
+            <div className="flex items-center justify-between gap-3">
               <div>
-                <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary">
-                  Worldscope
+                <p className="text-[10px] font-semibold uppercase tracking-[0.34em] text-primary/80">
+                  Port Harcourt Studio
                 </p>
                 <h3 className="mt-1 text-2xl font-semibold text-slate-900">
-                  Interiors
+                  Worldscope Interiors
                 </h3>
               </div>
               <button
                 type="button"
                 onClick={onClose}
-                className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 text-slate-700 transition hover:border-primary/30 hover:text-primary"
+                className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-primary/10 bg-white/80 text-slate-700 shadow-soft hover:border-primary/30 hover:text-primary"
                 aria-label="Close menu"
               >
                 <X className="h-5 w-5" />
@@ -49,10 +49,10 @@ function MobileMenu({ open, onClose }) {
                   to={link.to}
                   onClick={onClose}
                   className={({ isActive }) =>
-                    `block rounded-2xl px-4 py-3 text-base font-semibold transition ${
+                    `block rounded-[22px] px-4 py-3 text-base font-semibold transition ${
                       isActive
                         ? "bg-primary text-white shadow-soft"
-                        : "bg-slate-50 text-slate-700 hover:bg-primary/5 hover:text-primary"
+                        : "bg-white/80 text-slate-700 hover:bg-primary/5 hover:text-primary"
                     }`
                   }
                 >
@@ -61,15 +61,19 @@ function MobileMenu({ open, onClose }) {
               ))}
             </div>
 
-            <div className="mt-auto rounded-[28px] bg-slate-900 p-6 text-white shadow-panel">
-              <p className="text-sm text-slate-300">
-                Ready to discuss your space or schedule a cleaning session?
+            <div className="mt-auto rounded-[30px] bg-slate-900 p-6 text-white shadow-panel">
+              <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-accent">
+                Contact
               </p>
               <p className="mt-3 text-lg font-semibold">{siteConfig.phoneDisplay}</p>
+              <div className="mt-4 flex items-start gap-3 text-sm text-slate-300">
+                <MapPin className="mt-0.5 h-4 w-4 flex-none text-accent" />
+                <span>{siteConfig.addressPlaceholder}</span>
+              </div>
               <Link
                 to="/quote"
                 onClick={onClose}
-                className="mt-5 inline-flex items-center gap-2 rounded-full bg-accent px-5 py-3 text-sm font-semibold text-slate-900 transition hover:-translate-y-0.5"
+                className="mt-6 inline-flex items-center gap-2 rounded-full bg-accent px-5 py-3 text-sm font-semibold text-slate-900 transition hover:-translate-y-0.5"
               >
                 Get a Quote
                 <ArrowRight className="h-4 w-4" />
@@ -83,3 +87,4 @@ function MobileMenu({ open, onClose }) {
 }
 
 export default MobileMenu;
+

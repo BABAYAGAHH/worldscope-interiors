@@ -1,27 +1,31 @@
-export const homeHighlights = [
+﻿export const homeHighlights = [
   {
     title: "Professional Interior Solutions",
-    description: "Elegant design guidance and polished styling tailored to your space.",
+    description:
+      "Calm, refined styling direction for residential, commercial, and client-facing environments.",
   },
   {
     title: "Residential & Commercial Cleaning",
-    description: "Dependable cleaning services built around comfort, hygiene, and presentation.",
+    description:
+      "Dependable cleaning support built around hygiene, presentation, and long-term comfort.",
   },
   {
     title: "Reliable Customer Support",
-    description: "Fast response times and clear communication from inquiry to follow-up.",
+    description:
+      "Clear communication from inquiry to follow-up, with a WhatsApp-first response flow.",
   },
   {
     title: "Quality-Focused Service Delivery",
-    description: "Attention to detail and premium finish standards in every project.",
+    description:
+      "Disciplined execution, attention to detail, and premium finish standards in every project.",
   },
 ];
 
 export const homeStats = [
   { label: "Projects Completed", value: "100+" },
   { label: "Happy Clients", value: "50+" },
-  { label: "Fast Response", value: "Same Day" },
-  { label: "Service Packages", value: "Flexible" },
+  { label: "Response Style", value: "Fast & Direct" },
+  { label: "Based In", value: "Port Harcourt" },
 ];
 
 export const serviceOverview = [
@@ -29,7 +33,7 @@ export const serviceOverview = [
     slug: "interior-decoration",
     title: "Interior Decoration",
     description:
-      "Elegant interior styling and space transformation tailored to your taste, purpose, and budget.",
+      "Elegant interior styling, selected exterior touchpoint refinement, and space transformation tailored to your taste, purpose, and budget.",
   },
   {
     slug: "cleaning-services",
@@ -56,19 +60,19 @@ export const processSteps = [
 ];
 
 export const interiorServices = [
-  "Living Room Decoration",
-  "Bedroom Styling",
-  "Office Interior Setup",
-  "Space Planning",
-  "Furniture & Decor Arrangement",
-  "Color / Theme Consultation",
-  "Curtains / Accessories Styling",
-  "Commercial Interior Enhancement",
+  "Interior Styling & Decoration",
+  "Living Room & Bedroom Direction",
+  "Office & Commercial Setup",
+  "Space Planning & Layout Flow",
+  "Furniture, Art & Decor Placement",
+  "Colour, Finish & Material Guidance",
+  "Curtains, Blinds & Soft Furnishing Styling",
+  "Exterior Entry & Facade Enhancement",
 ];
 
 export const interiorProcess = [
   "Consultation",
-  "Style Direction",
+  "Style & Scope Direction",
   "Planning & Material Selection",
   "Execution",
   "Final Reveal",
@@ -78,7 +82,7 @@ export const interiorBenefits = [
   "Premium aesthetic sense",
   "Functional layouts",
   "Personalized styling",
-  "Suitable for home and business environments",
+  "Interior calm with selected exterior polish",
 ];
 
 export const cleaningServices = [
@@ -109,19 +113,23 @@ export const cleaningProcess = [
 export const cleaningPackages = [
   {
     title: "Basic Cleaning",
-    description: "A neat, reliable refresh for day-to-day upkeep in living and work spaces.",
+    description:
+      "A neat, reliable refresh for day-to-day upkeep in living and work spaces.",
   },
   {
     title: "Standard Cleaning",
-    description: "A more detailed service for clients who need consistent professional support.",
+    description:
+      "A more detailed service for clients who need consistent professional support.",
   },
   {
     title: "Deep Cleaning",
-    description: "Intensive cleaning for neglected spaces, move-ins, and major refreshes.",
+    description:
+      "Intensive cleaning for neglected spaces, move-ins, and major refreshes.",
   },
   {
     title: "Custom Commercial Package",
-    description: "Tailored solutions for offices, stores, and commercial environments.",
+    description:
+      "Tailored solutions for offices, stores, and commercial environments.",
   },
 ];
 

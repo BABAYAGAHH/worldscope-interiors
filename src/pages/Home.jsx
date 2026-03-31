@@ -1,11 +1,11 @@
 ﻿import {
   BadgeCheck,
-  Building2,
   ClipboardList,
   Clock3,
   Coins,
   Handshake,
   House,
+  MapPin,
   MessageCircleMore,
   Paintbrush2,
   PhoneCall,
@@ -40,10 +40,10 @@ const serviceIcons = [House, Sparkles];
 const featureIcons = [Users, BadgeCheck, Clock3, Coins, ShieldCheck, Sparkles];
 const processIcons = [MessageCircleMore, ClipboardList, Sparkles, Handshake];
 const processDescriptions = [
-  "We listen to your needs, space goals, and service preferences before recommending the right next step.",
-  "We inspect the space, align on scope, and map out the best design or cleaning approach.",
-  "Our team carries out the approved work with care, professionalism, and attention to detail.",
-  "We confirm the result, share next steps, and remain available for continued support.",
+  "We listen first, understand the space, and identify the right blend of styling or cleaning support.",
+  "We inspect, clarify scope, and shape a practical plan that respects time, budget, and purpose.",
+  "Our team carries out the approved work with measured execution and attention to every visible detail.",
+  "We review the outcome, confirm the finish, and stay available for follow-up support when needed.",
 ];
 
 function Home() {
@@ -62,8 +62,8 @@ function Home() {
           external: true,
         }}
         highlights={[
-          "Elegant interiors shaped around your taste and purpose",
-          "Residential and commercial cleaning with flexible scheduling",
+          "Interior styling shaped with calm sophistication and selected exterior touchpoint refinement.",
+          "Residential and commercial cleaning delivered with flexible scheduling and dependable follow-through.",
         ]}
         stats={homeStats}
         image="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1400&q=80"
@@ -71,6 +71,55 @@ function Home() {
         supportingImage="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=800&q=80"
         supportingAlt="Professional cleaning service"
       />
+
+      <section className="section-shell pt-0">
+        <div className="grid gap-6 lg:grid-cols-[1.15fr_0.85fr]">
+          <div className="section-panel p-8 lg:p-10">
+            <span className="eyebrow">Studio Standard</span>
+            <h2 className="mt-6 text-5xl font-semibold leading-[0.95] text-slate-900">
+              A disciplined approach to spaces that need both style and care.
+            </h2>
+            <p className="mt-6 max-w-3xl text-base text-slate-600 sm:text-lg">
+              Worldscope Interiors is your trusted partner for premium interior decoration and dependable cleaning services. We help homes, offices, and business spaces look better, feel better, and function better.
+            </p>
+            <div className="mt-8 fine-rule" />
+            <div className="mt-8 grid gap-6 md:grid-cols-2">
+              <div>
+                <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-primary">
+                  Design Focus
+                </p>
+                <p className="mt-3 text-sm leading-7 text-slate-600">
+                  Calm palettes, practical layouts, thoughtful finishing, and client-facing spaces that feel elevated without excess.
+                </p>
+              </div>
+              <div>
+                <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-primary">
+                  Service Focus
+                </p>
+                <p className="mt-3 text-sm leading-7 text-slate-600">
+                  Reliable cleaning support for homes and businesses that value presentation, order, and day-to-day comfort.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="rounded-[34px] bg-[linear-gradient(135deg,#2f211b_0%,#4b362c_100%)] p-8 text-white shadow-panel lg:p-10">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.32em] text-accent">
+              Based In Port Harcourt
+            </p>
+            <h3 className="mt-6 text-4xl font-semibold">A premium service presence grounded in detail.</h3>
+            <p className="mt-5 text-sm leading-7 text-slate-300">
+              From the first inquiry to the final reveal, we aim for spaces that read as polished, intentional, and professionally maintained.
+            </p>
+            <div className="mt-8 rounded-[28px] border border-white/10 bg-white/5 p-5">
+              <div className="flex items-start gap-3">
+                <MapPin className="mt-0.5 h-5 w-5 flex-none text-accent" />
+                <p className="text-sm leading-7 text-slate-200">{siteConfig.addressPlaceholder}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <section className="section-shell pt-0">
         <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
@@ -90,7 +139,7 @@ function Home() {
         <SectionHeader
           eyebrow="Services Overview"
           title="Two premium service categories under one dependable brand."
-          description="Worldscope Interiors is your trusted partner for premium interior decoration and dependable cleaning services. We help homes, offices, and business spaces look better, feel better, and function better."
+          description="The site remains structured around interior decoration and cleaning, but the interior side now captures a more refined scope that can extend to select exterior-facing enhancements."
         />
         <div className="mt-10 grid gap-6 lg:grid-cols-2">
           {serviceOverview.map((service, index) => (
@@ -99,6 +148,11 @@ function Home() {
               icon={serviceIcons[index]}
               title={service.title}
               description={service.description}
+              details={
+                index === 0
+                  ? ["Interiors", "Exterior touchpoints", "Commercial styling"]
+                  : ["Residential", "Commercial", "Deep cleaning"]
+              }
               to={`/${service.slug}`}
               cta="Learn More"
             />
@@ -152,15 +206,15 @@ function Home() {
             const Icon = processIcons[index];
 
             return (
-              <div key={step} className="section-panel p-6">
+              <div key={step} className="section-panel p-7">
                 <div className="flex items-center justify-between">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 text-primary">
+                  <div className="flex h-14 w-14 items-center justify-center rounded-[22px] bg-primary/10 text-primary">
                     <Icon className="h-5 w-5" />
                   </div>
                   <span className="text-4xl font-semibold text-primary/15">0{index + 1}</span>
                 </div>
-                <h3 className="mt-6 text-2xl font-semibold text-slate-900">{step}</h3>
-                <p className="mt-3 text-sm text-slate-600">{processDescriptions[index]}</p>
+                <h3 className="mt-6 text-[1.8rem] font-semibold leading-none text-slate-900">{step}</h3>
+                <p className="mt-4 text-sm leading-7 text-slate-600">{processDescriptions[index]}</p>
               </div>
             );
           })}
@@ -194,12 +248,12 @@ function Home() {
             </div>
           </div>
 
-          <div className="section-panel p-8">
-            <span className="eyebrow">Need Fast Help?</span>
-            <h3 className="mt-6 text-4xl font-semibold text-slate-900">
+          <div className="rounded-[34px] bg-[linear-gradient(135deg,#2f211b_0%,#4b362c_100%)] p-8 text-white shadow-panel">
+            <span className="eyebrow border-white/10 bg-white/10 text-white">Need Fast Help?</span>
+            <h3 className="mt-6 text-4xl font-semibold">
               Talk to us directly on WhatsApp.
             </h3>
-            <p className="mt-4 text-slate-600">
+            <p className="mt-4 text-slate-300">
               Share your service type, location, and preferred date, and we will guide you toward the right package.
             </p>
             <a

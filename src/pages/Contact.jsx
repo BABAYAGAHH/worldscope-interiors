@@ -35,12 +35,16 @@ const contactBlocks = [
   {
     title: "Address",
     value: siteConfig.addressPlaceholder,
-    description: "A map embed can be added once the full address is confirmed.",
+    description: "Visit or reference the studio location in Port Harcourt.",
     icon: MapPin,
   },
 ];
 
 function Contact() {
+  const mapEmbed = `https://www.google.com/maps?q=${encodeURIComponent(
+    siteConfig.addressPlaceholder
+  )}&output=embed`;
+
   return (
     <>
       <Seo title="Contact | Worldscope Interiors" />
@@ -68,13 +72,13 @@ function Contact() {
             const Icon = item.icon;
 
             return (
-              <div key={item.title} className="section-panel p-6">
-                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 text-primary">
+              <div key={item.title} className="section-panel p-7">
+                <div className="flex h-14 w-14 items-center justify-center rounded-[22px] bg-primary/10 text-primary">
                   <Icon className="h-5 w-5" />
                 </div>
-                <h3 className="mt-5 text-xl font-semibold text-slate-900">{item.title}</h3>
-                <p className="mt-2 text-sm font-semibold text-primary">{item.value}</p>
-                <p className="mt-3 text-sm text-slate-600">{item.description}</p>
+                <h3 className="mt-5 text-[1.55rem] font-semibold leading-none text-slate-900">{item.title}</h3>
+                <p className="mt-3 text-sm font-semibold text-primary">{item.value}</p>
+                <p className="mt-4 text-sm leading-7 text-slate-600">{item.description}</p>
               </div>
             );
           })}
@@ -88,12 +92,18 @@ function Contact() {
           <div className="space-y-8">
             <div className="section-panel p-8">
               <SectionHeader
-                eyebrow="Map Placeholder"
-                title="Location section ready for a future address update."
-                description="Once the address is available, this block can be replaced with an embedded map."
+                eyebrow="Studio Location"
+                title="Find us in Port Harcourt."
+                description="The map below uses the provided business address and can be fine-tuned later if needed."
               />
-              <div className="mt-8 flex min-h-72 items-center justify-center rounded-[28px] border border-dashed border-primary/25 bg-primary/5 p-6 text-center text-slate-500">
-                Map embed placeholder
+              <div className="mt-8 overflow-hidden rounded-[28px] border border-primary/10 bg-white/70 shadow-soft">
+                <iframe
+                  title="Worldscope Interiors location"
+                  src={mapEmbed}
+                  className="min-h-[320px] w-full border-0"
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                />
               </div>
             </div>
 
@@ -126,4 +136,3 @@ function Contact() {
 }
 
 export default Contact;
-

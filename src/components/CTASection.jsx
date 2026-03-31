@@ -36,10 +36,10 @@ function CTAAction({ action, className }) {
 function CTASection({ title, description, primaryAction, secondaryAction }) {
   return (
     <section className="section-shell pt-0">
-      <div className="relative overflow-hidden rounded-[36px] bg-slate-900 px-6 py-10 text-white shadow-panel sm:px-10 lg:px-14 lg:py-14">
-        <div className="absolute inset-0 bg-hero-glow opacity-40" />
+      <div className="relative overflow-hidden rounded-[38px] bg-[linear-gradient(135deg,#2f211b_0%,#4a3429_100%)] px-6 py-10 text-white shadow-panel sm:px-10 lg:px-14 lg:py-14">
+        <div className="absolute inset-0 bg-hero-glow opacity-30" />
         <div className="absolute -left-10 top-10 h-40 w-40 rounded-full bg-accent/20 blur-3xl" />
-        <div className="absolute bottom-0 right-0 h-56 w-56 rounded-full bg-primary/30 blur-3xl" />
+        <div className="absolute bottom-0 right-0 h-56 w-56 rounded-full bg-primary/35 blur-3xl" />
 
         <div className="relative flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
           <div className="max-w-3xl">
@@ -69,3 +69,4 @@ function CTASection({ title, description, primaryAction, secondaryAction }) {
 }
 
 export default CTASection;
+

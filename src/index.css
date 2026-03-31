@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Manrope:wght@400;500;600;700;800&display=swap");
+﻿@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Manrope:wght@400;500;600;700;800&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -15,9 +15,9 @@ html {
 body {
   @apply bg-background font-sans text-text antialiased;
   background-image:
-    radial-gradient(circle at top left, rgba(166, 206, 57, 0.2), transparent 35%),
-    radial-gradient(circle at 100% 20%, rgba(11, 107, 58, 0.12), transparent 32%),
-    linear-gradient(180deg, #f8faf8 0%, #f1f7f1 38%, #f8faf8 100%);
+    radial-gradient(circle at top left, rgba(215, 194, 168, 0.58), transparent 34%),
+    radial-gradient(circle at 100% 10%, rgba(106, 75, 59, 0.14), transparent 28%),
+    linear-gradient(180deg, #faf7f2 0%, #f3ece3 42%, #f7f1ea 100%);
 }
 
 body::before {
@@ -25,16 +25,16 @@ body::before {
   inset: 0;
   z-index: -1;
   background-image:
-    linear-gradient(rgba(11, 107, 58, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(11, 107, 58, 0.03) 1px, transparent 1px);
-  background-size: 120px 120px;
+    linear-gradient(rgba(106, 75, 59, 0.024) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(106, 75, 59, 0.024) 1px, transparent 1px);
+  background-size: 136px 136px;
   content: "";
   mask-image: radial-gradient(circle at center, black, transparent 85%);
 }
 
 ::selection {
-  background: rgba(166, 206, 57, 0.4);
-  color: #0b2a1b;
+  background: rgba(215, 194, 168, 0.72);
+  color: #241b16;
 }
 
 @layer base {
@@ -45,6 +45,7 @@ body::before {
   h5,
   h6 {
     @apply font-display text-slate-900;
+    letter-spacing: -0.025em;
   }
 
   p {
@@ -56,11 +57,16 @@ body::before {
   textarea {
     @apply text-base;
   }
+
+  a,
+  button {
+    @apply transition duration-300;
+  }
 }
 
 @layer components {
   .container-shell {
-    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+    @apply mx-auto w-full max-w-[88rem] px-4 sm:px-6 lg:px-8;
   }
 
   .section-shell {
@@ -68,31 +74,79 @@ body::before {
   }
 
   .section-panel {
-    @apply rounded-[32px] border border-white/70 bg-white/90 shadow-panel backdrop-blur-xl;
+    @apply rounded-[34px] shadow-panel backdrop-blur-xl;
+    border: 1px solid rgba(191, 165, 141, 0.18);
+    background: rgba(255, 253, 248, 0.88);
+    box-shadow:
+      0 34px 88px -52px rgba(50, 35, 26, 0.34),
+      inset 0 1px 0 rgba(255, 255, 255, 0.78);
   }
 
   .glass-panel {
-    @apply rounded-[28px] border border-white/70 bg-white/75 shadow-soft backdrop-blur-xl;
+    @apply rounded-[30px] shadow-soft backdrop-blur-xl;
+    border: 1px solid rgba(191, 165, 141, 0.16);
+    background: rgba(255, 253, 248, 0.72);
+    box-shadow:
+      0 24px 60px -38px rgba(56, 37, 26, 0.26),
+      inset 0 1px 0 rgba(255, 255, 255, 0.82);
   }
 
   .eyebrow {
-    @apply inline-flex items-center gap-2 rounded-full border border-primary/15 bg-primary/5 px-4 py-2 text-[11px] font-bold uppercase tracking-[0.28em] text-primary;
+    @apply inline-flex items-center gap-2 px-4 py-2 text-[10px] font-bold uppercase tracking-[0.32em] text-primary;
+    border-radius: 999px;
+    border: 1px solid rgba(106, 75, 59, 0.14);
+    background: rgba(106, 75, 59, 0.05);
   }
 
   .primary-button {
-    @apply inline-flex items-center justify-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white shadow-soft transition duration-300 hover:-translate-y-0.5 hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-primary/30;
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold text-white shadow-soft focus:outline-none focus:ring-2 focus:ring-primary/30;
+    background: linear-gradient(135deg, #7a5a47 0%, #593f31 100%);
+    box-shadow: 0 18px 40px -24px rgba(74, 49, 36, 0.45);
+  }
+
+  .primary-button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 24px 46px -22px rgba(74, 49, 36, 0.5);
   }
 
   .secondary-button {
-    @apply inline-flex items-center justify-center gap-2 rounded-full border border-primary/15 bg-white px-6 py-3 text-sm font-semibold text-primary shadow-soft transition duration-300 hover:-translate-y-0.5 hover:border-primary/35 hover:bg-primary/5 focus:outline-none focus:ring-2 focus:ring-primary/30;
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold text-primary shadow-soft focus:outline-none focus:ring-2 focus:ring-primary/30;
+    border: 1px solid rgba(106, 75, 59, 0.15);
+    background: rgba(255, 255, 255, 0.92);
+  }
+
+  .secondary-button:hover {
+    transform: translateY(-1px);
+    border-color: rgba(106, 75, 59, 0.35);
+    background: rgba(255, 248, 240, 0.94);
   }
 
   .nav-link {
-    @apply text-sm font-semibold text-slate-700 transition hover:text-primary;
+    @apply relative rounded-full px-4 py-2 text-sm font-semibold text-slate-700;
+  }
+
+  .nav-link::after {
+    position: absolute;
+    inset-inline: 0.95rem;
+    bottom: 0.45rem;
+    height: 1px;
+    transform: scaleX(0);
+    transform-origin: center;
+    background: linear-gradient(90deg, transparent, rgba(106, 75, 59, 0.75), transparent);
+    content: "";
+    transition: transform 0.3s ease;
+  }
+
+  .nav-link:hover {
+    color: #6a4b3b;
+  }
+
+  .nav-link:hover::after {
+    transform: scaleX(1);
   }
 
   .input-field {
-    @apply w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-text outline-none transition placeholder:text-slate-400 focus:border-primary/35 focus:ring-4 focus:ring-primary/10;
+    @apply w-full rounded-[22px] border border-[#d4c4b2] bg-white/90 px-4 py-3 text-text outline-none placeholder:text-slate-400 focus:border-primary/40 focus:ring-4 focus:ring-primary/10;
   }
 
   .field-label {
@@ -100,15 +154,35 @@ body::before {
   }
 
   .section-title {
-    @apply text-4xl leading-tight sm:text-5xl;
+    @apply text-4xl leading-[0.98] sm:text-5xl lg:text-[3.6rem];
   }
 
   .card-hover {
-    @apply transition duration-300 hover:-translate-y-1.5 hover:shadow-panel;
+    @apply transition duration-300 hover:-translate-y-1 hover:shadow-panel;
   }
 
   .muted-chip {
-    @apply rounded-full border border-primary/10 bg-primary/5 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-primary;
+    @apply rounded-full px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-primary;
+    border: 1px solid rgba(106, 75, 59, 0.1);
+    background: rgba(106, 75, 59, 0.05);
+  }
+
+  .editorial-note {
+    @apply rounded-[28px] p-6 shadow-soft;
+    border: 1px solid rgba(106, 75, 59, 0.12);
+    background: rgba(255, 255, 255, 0.8);
+  }
+
+  .stat-tile {
+    @apply rounded-[28px] px-5 py-4 shadow-soft;
+    border: 1px solid rgba(106, 75, 59, 0.1);
+    background: rgba(255, 255, 255, 0.8);
+  }
+
+  .fine-rule {
+    height: 1px;
+    width: 100%;
+    background: linear-gradient(90deg, transparent, rgba(106, 75, 59, 0.18), transparent);
   }
 }
 

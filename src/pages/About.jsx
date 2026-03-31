@@ -3,6 +3,7 @@
   Eye,
   Gem,
   Handshake,
+  MapPin,
   MessageCircleMore,
   ShieldCheck,
   Sparkles,
@@ -42,24 +43,54 @@ function About() {
       />
 
       <section className="section-shell pt-0">
+        <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
+          <div className="section-panel p-8 lg:p-10">
+            <span className="eyebrow">Our Point Of View</span>
+            <h2 className="mt-6 text-5xl font-semibold leading-[0.95] text-slate-900">
+              Style should feel resolved, and service should feel dependable.
+            </h2>
+            <p className="mt-6 text-base text-slate-600 sm:text-lg">
+              Our work is guided by thoughtful design, reliable execution, and a clear desire to leave every environment looking better and feeling better than before. We believe well-considered interiors and well-maintained spaces shape how people live, work, and welcome others.
+            </p>
+          </div>
+
+          <div className="editorial-note flex flex-col justify-between">
+            <div>
+              <p className="text-[10px] font-semibold uppercase tracking-[0.32em] text-primary">
+                Studio Base
+              </p>
+              <div className="mt-5 flex items-start gap-3">
+                <MapPin className="mt-1 h-5 w-5 flex-none text-primary" />
+                <p className="text-sm leading-7 text-slate-600">{siteConfig.addressPlaceholder}</p>
+              </div>
+            </div>
+            <div className="mt-8 fine-rule" />
+            <p className="mt-8 text-sm leading-7 text-slate-600">
+              The result we aim for is calm, composed, and highly usable: spaces that communicate quality without noise.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="section-shell pt-0">
         <SectionHeader
           eyebrow="Purpose"
           title="Style and service working together under one trusted business."
-          description="Our work is guided by thoughtful design, reliable execution, and a clear desire to leave every environment looking better and feeling better than before."
+          description="We hold the same premium standard whether the work is decorative, operational, residential, or commercial."
         />
         <div className="mt-10 grid gap-6 lg:grid-cols-2">
-          <div className="section-panel p-8">
+          <div className="section-panel p-8 lg:p-10">
             <span className="eyebrow">Mission</span>
-            <h3 className="mt-6 text-3xl font-semibold text-slate-900">
+            <h3 className="mt-6 text-4xl font-semibold text-slate-900">
               To enhance spaces through thoughtful design and reliable cleaning services.
             </h3>
             <p className="mt-4 text-slate-600">
               We improve comfort, appearance, and functionality with practical service that still feels refined.
             </p>
           </div>
-          <div className="section-panel p-8">
+          <div className="section-panel p-8 lg:p-10">
             <span className="eyebrow">Vision</span>
-            <h3 className="mt-6 text-3xl font-semibold text-slate-900">
+            <h3 className="mt-6 text-4xl font-semibold text-slate-900">
               To become a trusted name in interior transformation and cleaning excellence.
             </h3>
             <p className="mt-4 text-slate-600">
