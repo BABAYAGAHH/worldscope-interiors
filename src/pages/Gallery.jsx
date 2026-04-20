@@ -17,10 +17,10 @@ function Gallery() {
         description="Browse a mix of interior decoration, cleaning services, residential work, commercial work, and before-and-after transformations."
         primaryAction={{ label: "Request a Quote", to: "/quote" }}
         secondaryAction={{ label: "Contact Us", to: "/contact" }}
-        image="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1400&q=80"
-        imageAlt="Worldscope Interiors portfolio preview"
-        supportingImage="https://images.unsplash.com/photo-1563453392212-326f5e854473?auto=format&fit=crop&w=900&q=80"
-        supportingAlt="Cleaning results preview"
+        image="https://images.pexels.com/photos/19776020/pexels-photo-19776020.jpeg?auto=compress&cs=tinysrgb&w=1400"
+        imageAlt="African-inspired living room portfolio preview"
+        supportingImage="https://images.pexels.com/photos/6195125/pexels-photo-6195125.jpeg?auto=compress&cs=tinysrgb&w=900"
+        supportingAlt="Professional cleaning team portfolio preview"
         compact
       />
 

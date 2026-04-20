@@ -88,7 +88,7 @@ function GalleryGrid({ items, categories = [], showFilters = true, limit }) {
             <div className="relative overflow-hidden">
               <img
                 src={item.image}
-                alt={item.title}
+                alt={item.alt ?? item.title}
                 className="h-72 w-full object-cover transition duration-500 group-hover:scale-105"
                 loading="lazy"
               />
@@ -125,7 +125,7 @@ function GalleryGrid({ items, categories = [], showFilters = true, limit }) {
               >
                 <img
                   src={activeItem.image}
-                  alt={activeItem.title}
+                  alt={activeItem.alt ?? activeItem.title}
                   className="max-h-[75vh] w-full object-cover"
                 />
                 <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950 to-transparent px-6 pb-6 pt-24 text-white">
