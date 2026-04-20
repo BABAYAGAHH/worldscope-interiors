@@ -2,6 +2,7 @@
 import { ArrowRight, MapPin, X } from "lucide-react";
 import { Link, NavLink } from "react-router-dom";
 import { navLinks, siteConfig } from "../data/site";
+import BrandLogo from "./BrandLogo";
 
 function MobileMenu({ open, onClose }) {
   return (
@@ -24,14 +25,7 @@ function MobileMenu({ open, onClose }) {
             onClick={(event) => event.stopPropagation()}
           >
             <div className="flex items-center justify-between gap-3">
-              <div>
-                <p className="text-[10px] font-semibold uppercase tracking-[0.34em] text-primary/80">
-                  Port Harcourt Studio
-                </p>
-                <h3 className="mt-1 text-2xl font-semibold text-slate-900">
-                  Worldscope Interiors
-                </h3>
-              </div>
+              <BrandLogo className="min-w-0" />
               <button
                 type="button"
                 onClick={onClose}

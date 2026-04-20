@@ -9,6 +9,7 @@
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { navLinks, siteConfig } from "../data/site";
+import BrandLogo from "./BrandLogo";
 
 const serviceLinks = [
   { label: "Interior Decoration", to: "/interior-decoration" },
@@ -23,7 +24,7 @@ function Footer() {
       <div className="section-panel overflow-hidden px-6 py-10 sm:px-10 lg:px-12">
         <div className="grid gap-10 lg:grid-cols-[1.2fr_0.75fr_0.75fr_1fr]">
           <div>
-            <span className="eyebrow">Worldscope Interiors</span>
+            <BrandLogo />
             <h3 className="mt-6 max-w-md text-4xl font-semibold text-slate-900">
               Interior decoration and cleaning services with a calm premium standard.
             </h3>

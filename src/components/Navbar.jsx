@@ -2,6 +2,7 @@
 import { ArrowRight, Menu } from "lucide-react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { navLinks, siteConfig } from "../data/site";
+import BrandLogo from "./BrandLogo";
 import MobileMenu from "./MobileMenu";
 
 function Navbar() {
@@ -36,18 +37,8 @@ function Navbar() {
             }`}
           >
             <div className="flex items-center justify-between gap-4">
-              <Link to="/" className="flex items-center gap-4">
-                <div className="flex h-12 w-12 items-center justify-center rounded-full border border-primary/10 text-lg font-bold text-white shadow-soft" style={{ background: "linear-gradient(135deg, #7a5a47 0%, #593f31 100%)" }}>
-                  W
-                </div>
-                <div className="min-w-0">
-                  <p className="text-[10px] font-semibold uppercase tracking-[0.34em] text-primary/80">
-                    Port Harcourt Studio
-                  </p>
-                  <p className="truncate text-base font-semibold tracking-[-0.02em] text-slate-900 sm:text-lg">
-                    Worldscope Interiors
-                  </p>
-                </div>
+              <Link to="/" className="min-w-0">
+                <BrandLogo compact />
               </Link>
 
               <div className="hidden items-center gap-3 xl:flex">
