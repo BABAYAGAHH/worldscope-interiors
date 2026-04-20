@@ -7,6 +7,7 @@
   emailPlaceholder: "Official email coming soon",
   addressPlaceholder: "No.10 Nvigwe street, off Woji-Alcon Road, Port Harcourt.",
   developer: "MUSKENT IT SERVICES",
+  developerUrl: "http://muskent.com",
   description:
     "Worldscope Interiors delivers professional interior decoration and cleaning services with a focus on quality, style, and customer satisfaction.",
   metaDescription:

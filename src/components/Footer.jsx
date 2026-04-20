@@ -135,7 +135,18 @@ function Footer() {
         <div className="mt-10 fine-rule" />
         <div className="mt-6 flex flex-col gap-4 text-sm text-slate-500 sm:flex-row sm:items-center sm:justify-between">
           <p>© {new Date().getFullYear()} Worldscope Interiors. All rights reserved.</p>
-          <p>Website developed by {siteConfig.developer}</p>
+          <p className="flex flex-wrap items-center gap-2">
+            <span>Website developed by</span>
+            <a
+              href={siteConfig.developerUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="group inline-flex items-center rounded-full border border-primary/10 bg-white/70 px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.2em] text-primary shadow-soft transition hover:-translate-y-0.5 hover:border-primary/25 hover:bg-primary hover:text-white"
+              aria-label={`Visit ${siteConfig.developer}`}
+            >
+              {siteConfig.developer}
+            </a>
+          </p>
         </div>
       </div>
     </footer>
