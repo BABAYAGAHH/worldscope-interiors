@@ -17,10 +17,10 @@ function Gallery() {
         description="Browse a mix of interior decoration, cleaning services, residential work, commercial work, and before-and-after transformations."
         primaryAction={{ label: "Request a Quote", to: "/quote" }}
         secondaryAction={{ label: "Contact Us", to: "/contact" }}
-        image="https://images.pexels.com/photos/36482934/pexels-photo-36482934.jpeg?auto=compress&cs=tinysrgb&w=1400"
-        imageAlt="Neutral-toned residential interior portfolio preview"
-        supportingImage="https://images.pexels.com/photos/11137247/pexels-photo-11137247.jpeg?auto=compress&cs=tinysrgb&w=900"
-        supportingAlt="Professional cleaning service portfolio preview"
+        image="https://images.pexels.com/photos/7546321/pexels-photo-7546321.jpeg?auto=compress&cs=tinysrgb&w=1400"
+        imageAlt="Professional living room interior portfolio preview"
+        supportingImage="https://images.pexels.com/photos/6195278/pexels-photo-6195278.jpeg?auto=compress&cs=tinysrgb&w=900"
+        supportingAlt="Professional cleaning team portfolio preview"
         compact
       />
 
