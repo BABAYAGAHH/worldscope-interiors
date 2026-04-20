@@ -18,6 +18,12 @@ const serviceLinks = [
   { label: "Quote Request", to: "/quote" },
 ];
 
+const socialLinks = [
+  { label: "Instagram", icon: Instagram, hrefKey: "instagramLink" },
+  { label: "Facebook", icon: Facebook },
+  { label: "LinkedIn", icon: Linkedin },
+];
+
 function Footer() {
   return (
     <footer className="section-shell pb-10 pt-8">
@@ -40,14 +46,28 @@ function Footer() {
             </div>
 
             <div className="mt-6 flex flex-wrap gap-3">
-              {[Instagram, Facebook, Linkedin].map((Icon, index) => (
-                <span
-                  key={index}
-                  className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-primary/10 bg-white/80 text-slate-500 shadow-soft"
-                >
-                  <Icon className="h-4 w-4" />
-                </span>
-              ))}
+              {socialLinks.map(({ label, icon: Icon, hrefKey }) => {
+                const href = hrefKey ? siteConfig[hrefKey] : null;
+                const className =
+                  "inline-flex h-11 w-11 items-center justify-center rounded-full border border-primary/10 bg-white/80 text-slate-500 shadow-soft transition hover:-translate-y-0.5 hover:border-primary/25 hover:text-primary";
+
+                return href ? (
+                  <a
+                    key={label}
+                    href={href}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label={`Visit Worldscope Interiors on ${label}`}
+                    className={className}
+                  >
+                    <Icon className="h-4 w-4" />
+                  </a>
+                ) : (
+                  <span key={label} aria-label={`${label} coming soon`} className={className}>
+                    <Icon className="h-4 w-4" />
+                  </span>
+                );
+              })}
             </div>
           </div>
 

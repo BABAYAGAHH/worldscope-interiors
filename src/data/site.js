@@ -3,6 +3,7 @@
   phoneDisplay: "+234 803 338 7157",
   phoneRaw: "2348033387157",
   whatsappLink: "https://wa.me/2348033387157",
+  instagramLink: "https://www.instagram.com/worldscopeconcept/",
   emailPlaceholder: "Official email coming soon",
   addressPlaceholder: "No.10 Nvigwe street, off Woji-Alcon Road, Port Harcourt.",
   developer: "MUSKENT IT SERVICES",
