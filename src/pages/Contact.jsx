@@ -28,8 +28,8 @@ const contactBlocks = [
   },
   {
     title: "Email",
-    value: siteConfig.emailPlaceholder,
-    description: "Official business email can be updated later.",
+    value: siteConfig.email,
+    description: "Official business email for inquiries and support.",
     icon: Mail,
   },
   {
