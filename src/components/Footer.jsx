@@ -122,7 +122,9 @@ function Footer() {
               </div>
               <div className="flex items-start gap-3">
                 <Mail className="mt-0.5 h-4 w-4 flex-none text-primary" />
-                <span>{siteConfig.emailPlaceholder}</span>
+                <a href={`mailto:${siteConfig.email}`} className="hover:text-primary">
+                  {siteConfig.email}
+                </a>
               </div>
               <div className="flex items-start gap-3">
                 <MapPin className="mt-0.5 h-4 w-4 flex-none text-primary" />
@@ -133,7 +135,7 @@ function Footer() {
         </div>
 
         <div className="mt-10 fine-rule" />
-        <div className="mt-6 flex flex-col gap-4 text-sm text-slate-500 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-6 flex flex-col items-center gap-4 text-sm text-slate-500 sm:flex-row sm:items-center sm:justify-between">
           <p>© {new Date().getFullYear()} Worldscope Interiors. All rights reserved.</p>
           <p className="flex flex-wrap items-center gap-2">
             <span>Website developed by</span>
